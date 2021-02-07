@@ -54,20 +54,16 @@ public class StatsService {
         }
         int middleSales = sum / values.length;
 
-
         int lowSales = values[0], month = 0;
-        for (int i = 1; i < middleSales; i++) {
-            if (values[i] <= middleSales) {
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] < middleSales) {
                 lowSales = values[i];
                 month = i;
 
             }
         }
-        return lowSales;
+        return month;
     }
-
-
-
 
 
 
