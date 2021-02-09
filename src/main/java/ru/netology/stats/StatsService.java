@@ -2,82 +2,73 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public int calculateSumSales(int[] values) {
-        int sumSales = 0, month = 0;
-        for (int value : values) {
-            sumSales += value;
+
+    public int sum(int[] sales) {
+        int result = 0;
+
+        for (int sale : sales) {
+            result += sale;
 
         }
-        return sumSales;
+        return result;
     }
 
 
-    public int calculateMiddleSumSales(int[] values) {
-        int sum = 0;
-        for (int value : values) {
-            sum += value;
-        }
-        int middleSales = sum / values.length;
-        return middleSales;
+    public int avg(int[] sales) {
+        return sum(sales) / sales.length;
     }
 
 
-    public int calculateSalesMax(int[] values) {
-        int salesMax = values[0], month = 0;
-        for (int i = 1; i < values.length; i++) {
-            if (values[i] >= salesMax) {
-                salesMax = values[i];
-                month = i;
+    public int monthWithMax(int[] sales) {
+        int max = max(sales);
+
+        int monthNumber = 0;
+        int monthWithMax = 0;
+        for (int sale : sales) {
+            monthNumber++;  
+            if (sale == max) {
+                monthWithMax = monthNumber;
             }
         }
-        return month;
+            return monthWithMax ;
     }
 
-
-    public int calculateSalesMin(int[] values) {
-        int salesMin = values[0], month = 0;
-        for (int i = 1; i < values.length; i++) {
-            if (values[i] <= salesMin) {
-                salesMin = values[i];
-                month = i;
-
+       public int max(int[] sales) {
+        int max  = sales[0];
+        for (int sale : sales) {
+            if (sale > max) {
+                max = sale;
             }
         }
-        return month;
+        return max;
     }
 
-
-    public int calculateMonthsLowMiddleSales(int[] values) {
-        int sum = 0;
-        for (int value : values) {
-            sum += value;
+        public int min(int[] sales) {
+            int min  = sales[0];
+            for (int sale : sales) {
+                if (sale < min) {
+                    min = sale;
+                }
+            }
+            return min;
         }
-        int middleSales = sum / values.length;
 
-        int lowSales = values[0], month = 0;
-        for (int i = 1; i < values.length; i++) {
-            if (values[i] < middleSales) {
-                lowSales = values[i];
-                month = i;
 
+
+       public int monthWithMin(int[] sales) {
+        int min = min(sales);
+
+        int monthNumber = 0;
+        int monthWithMin = 0;
+        for (int sale : sales) {
+            monthNumber++;
+            if (sale == min) {
+                monthWithMin = monthNumber;
             }
         }
-        return month;
+        return monthWithMin ;
     }
 
+}
 
 
-
-
-
-    public int calculateMonthsUpMiddleSales(int[]values){
-        int month=0;
-        for(int value:values){
-
-        month+=month;
-
-
-        }
-        return month;
-        }
-        }

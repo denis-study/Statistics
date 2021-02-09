@@ -8,82 +8,46 @@ class StatsServiceTest {
 
 
     @Test
-    void calculateSumSales() {
+
+    void shouldSum() {
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
 
-        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
-
-        int actual = service.calculateSumSales(values);
-
-        assertEquals(expected, actual);
-    }
-
-
-
-
-
-
-    @Test
-    void calculateMiddleSumSales() {
-        StatsService service = new StatsService();
-
-        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 15;
-
-        int actual = service.calculateMiddleSumSales(values);
+        int actual = service.sum(sales);
 
         assertEquals(expected, actual);
     }
 
 
     @Test
-    void calculateSalesMax() {
+    void shouldAverage() {
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
 
-        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 7;
-        int actual = service.calculateSalesMax(values);
 
-        assertEquals(expected, actual);
+        assertEquals(15, service.avg(sales));
+    }
+
+
+
+    @Test
+    void shouldReturnWithMax() {
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+
+        assertEquals(8, service.monthWithMax(sales));
     }
 
 
     @Test
-    void calculateSalesMin() {
+    void shouldReturnWithMin() {
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
 
-        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 8;
 
-        int actual = service.calculateSalesMin(values);
-
-        assertEquals(expected, actual);
-    }
-
-
-    @Test
-    void calculateMonthsLowMiddleSales() {
-        StatsService service = new StatsService();
-
-        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 15;
-
-        int actual = service.calculateMonthsLowMiddleSales(values);
-
-        assertEquals(expected, actual);
-    }
-
-
-    @Test
-    void calculateMonthsUpMiddleSales() {
-        StatsService service = new StatsService();
-
-        int[] values = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 180;
-
-        int actual = service.calculateMonthsUpMiddleSales(values);
-
-        assertEquals(expected, actual);
+        assertEquals(9, service.monthWithMin(sales));
     }
 }
+
