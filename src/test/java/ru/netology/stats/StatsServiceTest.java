@@ -50,7 +50,7 @@ class StatsServiceTest {
 
     @Test
     void shouldReturnMonthWithMoreThanAverage() {
-        
+
 
         assertEquals(5, service.monthCountMoreThanAverage(sales));
     }
