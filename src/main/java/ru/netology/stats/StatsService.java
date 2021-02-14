@@ -25,16 +25,16 @@ public class StatsService {
         int monthNumber = 0;
         int monthWithMax = 0;
         for (int sale : sales) {
-            monthNumber++;  
+            monthNumber++;
             if (sale == max) {
                 monthWithMax = monthNumber;
             }
         }
-            return monthWithMax ;
+        return monthWithMax;
     }
 
-       public int max(int[] sales) {
-        int max  = sales[0];
+    public int max(int[] sales) {
+        int max = sales[0];
         for (int sale : sales) {
             if (sale > max) {
                 max = sale;
@@ -43,19 +43,18 @@ public class StatsService {
         return max;
     }
 
-        public int min(int[] sales) {
-            int min  = sales[0];
-            for (int sale : sales) {
-                if (sale < min) {
-                    min = sale;
-                }
+    public int min(int[] sales) {
+        int min = sales[0];
+        for (int sale : sales) {
+            if (sale < min) {
+                min = sale;
             }
-            return min;
         }
+        return min;
+    }
 
 
-
-       public int monthWithMin(int[] sales) {
+    public int monthWithMin(int[] sales) {
         int min = min(sales);
 
         int monthNumber = 0;
@@ -66,7 +65,7 @@ public class StatsService {
                 monthWithMin = monthNumber;
             }
         }
-        return monthWithMin ;
+        return monthWithMin;
     }
 
 }

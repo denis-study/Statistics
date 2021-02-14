@@ -8,7 +8,6 @@ class StatsServiceTest {
 
 
     @Test
-
     void shouldSum() {
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
@@ -28,7 +27,6 @@ class StatsServiceTest {
 
         assertEquals(15, service.avg(sales));
     }
-
 
 
     @Test
